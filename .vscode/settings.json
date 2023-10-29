@@ -1,0 +1,17 @@
+{
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#4e3053",
+        "titleBar.activeBackground": "#9f3b2a",
+        "titleBar.activeForeground": "#ffffff",
+        "menu.background": "#545c74",
+        "input.background": "#353535",
+        "editor.background": "#534c53",
+        
+        
+    },
+    "editor.tokenColorCustomizations": {
+        "comments": "#f8f429",
+        
+    },
+    "liveServer.settings.port": 5501
+}
