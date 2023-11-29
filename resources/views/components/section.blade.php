@@ -2,6 +2,7 @@
     <div class="row ms-5">
         <div class="col-12 col-lg-4"><img src="{{asset('img\OIP (1).jfif')}}" alt="" class="img-fluid card v-100">
         <h3 class="text-white">Titolo</h3>
+        <a href="{{route('show-review')}}">leggi recensine</a>
         <p  class="text-white">questa è la <strong>recensione</strong></p>
     </div>
         <div class="col-12 col-lg-4"><img src="{{asset('img/download.jfif')}}" alt="" class="img-fluid card v-100"><h3 class="text-white">Titolo</h3>

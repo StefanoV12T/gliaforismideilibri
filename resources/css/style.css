@@ -1,4 +1,5 @@
 body{
-    background: url('/public/img/jacob.jfif') fixed ;
+    background: url('/public/img/GettyImages-909045284-1.jpg') fixed ;
     background-size: cover;    
+    background-position: bottom;
 }
