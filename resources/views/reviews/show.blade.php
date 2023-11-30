@@ -1,3 +1,4 @@
 <x-main>
-    questo è una recensione
+    <x-navbar/>
+    questa è una recensione
 </x-main>
