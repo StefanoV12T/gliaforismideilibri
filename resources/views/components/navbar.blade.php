@@ -26,6 +26,37 @@
           <li class="nav-item">
             <a class="nav-link disabled" aria-disabled="true">Disabled</a>
           </li>
+          @guest
+          <li class="nav-item">
+              <a class="nav-link" href="{{ route('login') }}">{{__('ui.login')}}</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="{{ route('register') }}">{{__('ui.register')}}</a>
+          </li>
+      @else
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  {{ auth()->user()->name }}
+              </a>
+              <ul class="dropdown-menu bg-warning">
+                  <li>
+                      <form action="{{ route('logout') }}" method="POST">
+                          @csrf
+                          <div class="d-flex justify-content-center">
+                              <button type="submit" class="fa-solid fa-person-walking-luggage text-black bg-danger">Bye bye
+                                  </button>
+                          </div>
+                      </form>
+                  </li>
+              </ul>
+          </li>
+          <li>
+              <a class="btn btn-warning mb-lg-0 mb-2 me-2 margin" href="">
+                </a>
+          </li>
+          
+          @endguest
         </ul>
         <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
