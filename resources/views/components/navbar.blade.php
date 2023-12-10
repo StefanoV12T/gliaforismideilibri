@@ -28,16 +28,16 @@
           </li>
           @guest
           <li class="nav-item">
-              <a class="nav-link" href="{{ route('login') }}">{{__('ui.login')}}</a>
+              <a class="nav-link" href="{{ route('login') }}">Login</a>
           </li>
           <li class="nav-item">
-              <a class="nav-link" href="{{ route('register') }}">{{__('ui.register')}}</a>
+              <a class="nav-link" href="{{ route('register') }}">Registrati</a>
           </li>
       @else
           <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                   aria-expanded="false">
-                  {{ auth()->user()->name }}
+                  {{-- {{ auth()->user()->name }} --}}
               </a>
               <ul class="dropdown-menu bg-warning">
                   <li>
