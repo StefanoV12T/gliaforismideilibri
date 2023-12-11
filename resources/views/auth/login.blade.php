@@ -1,6 +1,6 @@
 <x-main>
    
-    <div class="spazio"></div>
+    
     <div class="container overlay card py-5 mt-5">
         <div class="row">
             <div class="col-8 mx-auto">
@@ -17,6 +17,10 @@
                             <label for="password">Password</label>
                             <input type="password" name="password" id="password" class="form-control">
                             @error('password') <span class="small text-danger">Password errata o utente non registrato</span>@enderror
+                        </div>
+                        <div class="col-12">
+                            <label for="remember">Ricordati di me</label>
+                            <input type="checkbox" name="remember" id="exampleCheck1" class="form-ceck-input">
                         </div>
                         <div>
                             <button type="submit" class="btn btn-warning">Login</button>
