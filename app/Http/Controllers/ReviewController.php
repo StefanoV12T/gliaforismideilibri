@@ -6,5 +6,7 @@ use Illuminate\Http\Request;
 
 class ReviewController extends Controller
 {
-    //
+    public function createReview(){
+        return view('reviews.create');
+    }
 }

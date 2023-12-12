@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\ReviewsController;
+use App\Livewire\CreateReview;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +22,4 @@ Route::get('/',[HomeController::class, 'welcome'] )->name('welcome');
 
 Route::get('/show',[ReviewsController::class, 'show'] )->name('show-review');
 
+Route::get('/nuova/revisione', [ReviewController::class, 'createReview'])->name('create-review');

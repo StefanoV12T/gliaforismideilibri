@@ -52,7 +52,7 @@
               </ul>
           </li>
           <li>
-              <a class="btn btn-warning mb-lg-0 mb-2 me-2 margin" href="">Scrivi recensione
+              <a class="btn btn-warning mb-lg-0 mb-2 me-2 margin" href={{route('create-review')}}>Scrivi recensione
                 </a>
           </li>
           
