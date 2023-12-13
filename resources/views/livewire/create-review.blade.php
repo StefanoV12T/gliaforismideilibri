@@ -1,13 +1,14 @@
 <div class="container overlay mt-5 card">
    <div class="row mx-5">
        <div class="col-12 col-lg-6">
-           <h2 class="mt-5 neonText2">Crea Revisione</h2>
+           <h2 class="my-5 neonText2">Crea Revisione</h2>
            
          @if(session()->has('success'))
          {{-- <x-success/> --}}
          @endif
      
-         <form wire:submit.prevent="submit">
+         <form wire:submit.prevent="store">
+            @csrf
            <div>
                <label for="title">Titolo del libro</label>
                <input type="text" class="form-control @error('title')is-invalid @enderror" wire:model.lazy="title">
@@ -67,7 +68,7 @@
             </div>
                
            @endif --}}
-           <div class="mt-3">
+           <div class="my-5">
                <button class="btn btn-warning" type="submit">Pubblica recensione</button>
            </div>
           </form>
