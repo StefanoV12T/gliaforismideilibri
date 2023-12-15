@@ -17,9 +17,14 @@ class CreateReview extends Component
             'body'=>$this->body,
 
         ]);
+
+        $this->cleanForm();
     }
 
-
+    public function cleanForm(){
+        $this->title="";
+        $this->body="";
+    }
     public function render()
     {
         return view('livewire.create-review');
