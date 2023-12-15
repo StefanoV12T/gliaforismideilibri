@@ -5,6 +5,9 @@
            
          @if(session()->has('success'))
          {{-- <x-success/> --}}
+         <div class="alert-success alert">
+             {{session('success')}}
+         </div>
          @endif
      
          <form wire:submit.prevent="store">
@@ -16,7 +19,7 @@
            </div>
            <div>
                <label for="body">Recensione</label>
-               <input type="text" class="form-control @error('body')is-invalid @enderror" wire:model.lazy="body">
+               <textarea type="text" rows="5" class="form-control @error('body')is-invalid @enderror" wire:model.lazy="body"></textarea>
                @error('body') <span class="small text-danger">{{$message}}</span>@enderror
            </div>       
            {{-- <div>
