@@ -14,7 +14,7 @@
             @csrf
            <div>
                <label for="title">Titolo del libro</label>
-               <input type="text" autofocus class="form-control @error('title')is-invalid @enderror" wire:model.lazy="title">
+               <input type="text" class="form-control @error('title')is-invalid @enderror" wire:model.blur="title">
                @error('title') <span class="small text-danger">{{$message}}</span>@enderror
            </div>
            <div>
