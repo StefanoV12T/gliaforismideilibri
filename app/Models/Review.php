@@ -10,4 +10,8 @@ class Review extends Model
     use HasFactory;
 
     protected $fillable=['title','body'];
+
+    public function category(){
+        return $this->belongsToMany(Category::class);
+    }
 }

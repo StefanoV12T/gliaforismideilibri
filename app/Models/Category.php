@@ -9,4 +9,8 @@ class Category extends Model
 {
     use HasFactory;
     protected $fillable=['name'];
+    
+    public function reviews() {
+        return $this->hasMany((Review::class));
+    }
 }

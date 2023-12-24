@@ -21,8 +21,10 @@
                <label for="body">Recensione</label>
                <textarea type="text" rows="5" class="form-control @error('body')is-invalid @enderror" wire:model.lazy="body"></textarea>
                @error('body') <span class="small text-danger">{{$message}}</span>@enderror
-           </div>       
-           {{-- <div>
+           </div>  
+           
+           
+            <div>
                <label for="category"></label>
                <select wire:model.defer="category" id="category" name="category" class="form-control">
                   <option value="">
@@ -44,7 +46,7 @@
                       
                </select>
                   @error('category') <span class="small text-danger">{{$message}}</span>@enderror
-           </div> --}}
+           </div>
        
            {{-- <div class="my-3">
                <input wire:model="temporary_images" type="file" name="images" multiple class="form-control shadow @error('temporary_images.*')is-invalid @enderror" placeholder="Img"/> @error('temporary_images') <span class="small text-danger">{{$message}}</span>@enderror
@@ -71,6 +73,9 @@
             </div>
                
            @endif --}}
+
+
+
            <div class="my-5">
                <button class="btn btn-warning" type="submit">Pubblica recensione</button>
            </div>
