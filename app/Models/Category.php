@@ -11,6 +11,6 @@ class Category extends Model
     protected $fillable=['name'];
     
     public function reviews() {
-        return $this->hasMany((Review::class));
+        return $this->belongsToMany((Review::class));
     }
 }

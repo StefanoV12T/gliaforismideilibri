@@ -21,9 +21,9 @@ use App\Livewire\CreateReview;
 
 Route::get('/',[HomeController::class, 'welcome'] )->name('welcome');
 
-Route::get('/show',[ReviewsController::class, 'show'] )->name('show-review');
+Route::get('/show',[ReviewController::class, 'show'] )->name('show-review');
 
-Route::get('/nuova/revisione', [ReviewController::class, 'createReview'])->name('create-review');
+Route::get('/nuova/revisione', [ReviewController::class, 'createReview'])->name('create-review')->middleware(['auth']);
 
 // Route::resource('categories', \App\Http\Controllers\CategoryController::class);
 

@@ -11,7 +11,10 @@ class Review extends Model
 
     protected $fillable=['title','body'];
 
-    public function category(){
+    public function categories(){
         return $this->belongsToMany(Category::class);
+    }
+    public function user(){
+        return $this->belongsTo(User::class);
     }
 }

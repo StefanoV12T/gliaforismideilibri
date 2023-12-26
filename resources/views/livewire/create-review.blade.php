@@ -24,11 +24,19 @@
            </div>  
            
            
-            <div>
-               <label for="category"></label>
+           <div>
+            <label for="categories">Categories:</label>
+            @foreach ($categories as $category)
+                <div>
+                    <input type="checkbox" id="{{ $category->id }}" value="{{ $category->id }}" wire:model="selectedCategories">
+                    <label for="{{ $category->id }}">{{ $category->name }}</label>
+                </div>
+            @endforeach
+        </div>
+               {{-- <label for="category"></label>
                <select wire:model.defer="category" id="category" name="category" class="form-control">
                   <option value="">
-                       {{__('ui.categoryChoose')}}
+                       Scegli Categoria
                   </option>
                   @foreach ($categories as $category)
                   @switch(session('locale'))
@@ -44,7 +52,7 @@
                                @endswitch
                   @endforeach
                       
-               </select>
+               </select> --}}
                   @error('category') <span class="small text-danger">{{$message}}</span>@enderror
            </div>
        
