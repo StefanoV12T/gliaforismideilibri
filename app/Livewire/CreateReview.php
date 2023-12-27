@@ -6,6 +6,7 @@ use Livewire\Component;
 use App\Models\Category;
 use Livewire\Attributes\Validate;
 
+
 class CreateReview extends Component
 {
     
@@ -15,7 +16,7 @@ class CreateReview extends Component
     public $body;
     #[Validate]
     public $selectedCategories=[];
-
+    
     public function rules()
     {
         return [
@@ -32,17 +33,22 @@ class CreateReview extends Component
 
     public function store()
     {
-        //dd($this->selectedCategories);
-        $review = new review();
-        $review->title = $this->title;
-        $review->body = $this->body;
-        $review->save();
-        // $article->categories()->attach($request->categories);
-        $review->categories()->attach($this->selectedCategories);
-        // $validated = $this->validate();
- 
-        //Review::create($validated);
 
+        $validated = $this->validate();
+        
+        
+        $review=Review::create($validated);
+
+        //dd($this->selectedCategories);
+        // $review = new review();
+        // $review->title = $this->title;
+        // $review->body = $this->body;
+        
+        $review->user_id=auth()->user()->id;
+        
+        
+        $review->categories()->attach($this->selectedCategories);
+        $review->save();
         session()->flash('success','Recensione creata con successo');
         $this->cleanForm();
     }
@@ -52,6 +58,10 @@ class CreateReview extends Component
         $this->body="";
         $this->selectedCategories=[];
     }
+
+    // public function updated($propertyName){
+    // $this->validateOnly($propertyName);
+    // }
 
     public function render()
     {

@@ -29,10 +29,13 @@
             @foreach ($categories as $category)
                 <div>
                     <input type="checkbox" id="{{ $category->id }}" value="{{ $category->id }}" wire:model="selectedCategories">
-                    <label for="{{ $category->id }}">{{ $category->name }}</label>
+                    <label  for="{{ $category->id }}">{{ $category->name }}</label>
+                    
                 </div>
+                
             @endforeach
-        </div>
+            @error('selectedCategories') <span class="small text-danger">{{ $message }}</span> @enderror
+            </div>
                {{-- <label for="category"></label>
                <select wire:model.defer="category" id="category" name="category" class="form-control">
                   <option value="">

@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use League\CommonMark\Reference\Reference;
 
 return new class extends Migration
 {
@@ -15,8 +16,6 @@ return new class extends Migration
             $table->primary(['review_id', 'category_id']);
             $table->unsignedBigInteger('review_id');
             $table->unsignedBigInteger('category_id');
-            
-            $table->timestamps();
             $table->foreign('category_id')->references('id')->on('categories');
             $table->foreign('review_id')->references('id')->on('reviews');
             
