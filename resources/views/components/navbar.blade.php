@@ -53,8 +53,11 @@
           </li>
           <li>
             <a class="btn btn-warning mb-lg-0 mb-2 me-2 margin" href={{route('categories.create')}}>Crea categoria
-            </a><a class="btn btn-warning mb-lg-0 mb-2 me-2 margin" href={{route('create-review')}}>Scrivi recensione
-                </a>
+            </a>
+            <a class="btn btn-warning mb-lg-0 mb-2 me-2 margin" href={{route('create-review')}}>Scrivi recensione
+            </a>
+            <a class="btn btn-warning mb-lg-0 mb-2 me-2 margin" href={{route('categories.index')}}>Gestisci Categorie
+            </a>
           </li>
           
           @endguest
