@@ -3,3 +3,9 @@ body{
     background-size: cover;    
     background-position: bottom;
 }
+
+.overlay{
+       
+    background-color: #d4cb9fa9;
+    
+}

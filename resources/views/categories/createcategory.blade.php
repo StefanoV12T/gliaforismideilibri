@@ -2,7 +2,7 @@
     <div class="container px-5 my-5">
         <div class="row justify-content-center">
           <div class="col-lg-8">
-            <div class="card border-0 rounded-3 shadow-lg">
+            <div class="card border-0 overlay rounded-3 shadow-lg">
               <div class="card-body p-4">
                 <div class="text-center">
                   <div class="h1 fw-light">Crea Categoria</div>
@@ -21,7 +21,7 @@
   
                   <!-- Submit button -->
                   <div class="d-grid">
-                    <button class="btn btn-primary btn-lg" id="submitButton" type="submit">Submit</button>
+                    <button class="btn btn-warning" id="submitButton" type="submit">Submit</button>
                   </div>
                 </form>
                 

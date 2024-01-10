@@ -5,7 +5,7 @@
     </div>
     @endif
         
-    <table class="table">
+    <table class="tablez">
         <thead>
           <tr>
             <th scope="col">Id</th>
