@@ -21,12 +21,12 @@
                 
                 <th scope="row">{{$category['id']}}</th>
                 <td>{{$category['name']}}</td>
-                <td>
+                {{-- <td>
                     @foreach ($category->articles as $article )
                     {{$article->title}}
                         
                     @endforeach
-                </td>
+                </td> --}}
                 <td><a class="btn btn-primary" href="{{route('categories.edit', $category)}}">modifica</a>
                     <form  class="d-inline" action="{{route('categories.destroy', $category)}}" method="POST">
                         @csrf
