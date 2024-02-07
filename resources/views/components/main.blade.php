@@ -9,6 +9,7 @@
   </head>
   <body>
     <x-navbar/>
-    {{$slot}}   
+    {{$slot}}  
+    @include('cookie-consent::index') 
   </body>
 </html>
