@@ -19,7 +19,7 @@ use App\Livewire\CreateReview;
 */
 
 
-Route::get('/home',[HomeController::class, 'welcome'] )->name('welcome');
+Route::get('/',[HomeController::class, 'welcome'] )->name('welcome');
 
 Route::get('/show',[ReviewController::class, 'show'] )->name('show-review');
 
