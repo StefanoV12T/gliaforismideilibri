@@ -1,0 +1,16 @@
+{
+  "public/img/GettyImages-909045284-1.jpg": {
+    "file": "assets/GettyImages-909045284-1-12af9924.jpg",
+    "src": "public/img/GettyImages-909045284-1.jpg"
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-93c6625f.css",
+    "isEntry": true,
+    "src": "resources/css/app.css"
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-a83ed21d.js",
+    "isEntry": true,
+    "src": "resources/js/app.js"
+  }
+}
