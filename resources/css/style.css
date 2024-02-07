@@ -13,3 +13,15 @@ body{
 .myHeight{
     height: 300px;
 }
+
+.js-cookie-consent{
+    position: fixed;
+    top: 0px;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    z-index: 9999;
+    background-color: #857f64db;
+    border-color: #fffacc;
+    border: solid 1px;
+  }
