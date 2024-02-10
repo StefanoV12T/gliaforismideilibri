@@ -21,6 +21,8 @@ class CategoryController extends Controller
 
         $category=new Category();
         $category->name=$request->name;
+        $category->category_author_id=auth()->user()->id;
+        $category->category_author_name=auth()->user()->name;
         $category->save();
      
         return redirect()->route('categories.index')->with(['success'=>'Categoria creata correttamente']);
@@ -51,4 +53,5 @@ class CategoryController extends Controller
         return redirect()->back()->with(['success'=>'Categoria cancellata correttamente']);
 
     }
+
 }

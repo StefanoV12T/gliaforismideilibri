@@ -13,7 +13,7 @@
       
                   <!-- Name Input -->
                   <div class=" mb-3">
-                    <input class="form-control @error('name') is-invalid @enderror" id="name" name="name" type="text" placeholder="nome categoria" data-sb-validations="required" title="name" value="{{old('name')}}" maxlength="150" />
+                    <input class="form-control @error('name') is-invalid @enderror" id="name" name="name" type="text" placeholder="Nome categoria" data-sb-validations="required" title="name" value="{{old('name')}}" maxlength="150" />
                     @error('name') <span>{{$message}}</span>@enderror
                   </div>
       

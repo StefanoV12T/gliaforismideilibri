@@ -1,5 +1,6 @@
 <x-main>
-    <x-section/>
+   
+    {{-- <x-section/> --}}
     <div class="container">
         <div class="row">
             <div class="col-12 overlay my-5 card">
@@ -14,8 +15,10 @@
                         {{-- }} --}}
                         " class="card-img-top" alt="...">
                             <div class="card-body " >
-                              <h5 class="card-title title-dimension overflow-hidden" >{{$review->title}}</h5>
-                                <a href="{{route('show-review',compact('review'))}}" class="btn w-100 btn-warning">Leggi recensione</a>
+                              <h5 class="card-title p-1 title-dimension overflow-hidden" >{{$review->title}}</h5>
+                              <span>di</span>
+                              <h6 class="d-inline">{{$review->author}}</h6>
+                                <a href="{{route('show-review', $review)}}" class="btn w-100 btn-warning">Leggi recensione</a>
                                 {{-- <a href="{{route('categoryShow',['category'=>$review->category])}}" class="btn w-100 my-2 btn-warning">{{__('ui.category')}}:</a> --}}
                                 <p class="card-footer bg-white">Recensito il: {{$review->created_at->format('d/m/y')}} <br>Autore: {{$review->user->name}}</p>
                             </div>

@@ -11,7 +11,7 @@
               <tr>
                 <th class=" py-2" scope="col">Id</th>
                 <th class=" py-2" scope="col">Categoria</th>
-                <th class=" py-2" scope="col">Autore</th>
+                <th class=" py-2" scope="col">Autore Categoria</th>
                 <th class=" py-2" scope="col">Opzioni</th>
               </tr>
             </thead>
@@ -32,7 +32,7 @@
                             
                         @endforeach
                     </td> --}}
-                    <td class="border-top border-black">ciao</td>
+                    <td class="border-top border-black">{{$category['category_author_name']}}</td>
                     <td class="border-top border-black"><a class="btn btn-warning" href="{{route('categories.edit', $category)}}">modifica</a>
                         <form  class="d-inline" action="{{route('categories.destroy', $category)}}" method="POST">
                             @csrf

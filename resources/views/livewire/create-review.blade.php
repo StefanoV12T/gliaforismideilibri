@@ -18,45 +18,29 @@
                @error('title') <span class="small text-danger">{{$message}}</span>@enderror
            </div>
            <div>
+            <label for="author">Autore del libro</label>
+            <input type="text" class="form-control @error('author')is-invalid @enderror" wire:model.blur="author">
+            @error('author') <span class="small text-danger">{{$message}}</span>@enderror
+        </div>
+            <div>
                <label for="body">Recensione</label>
                <textarea type="text" rows="5" class="form-control @error('body')is-invalid @enderror" wire:model.lazy="body"></textarea>
                @error('body') <span class="small text-danger">{{$message}}</span>@enderror
-           </div>  
-           
-           
-           <div>
-            <label for="categories">Categories:</label>
-            @foreach ($categories as $category)
-                <div>
-                    <input type="checkbox" id="{{ $category->id }}" value="{{ $category->id }}" wire:model="selectedCategories">
-                    <label  for="{{ $category->id }}">{{ $category->name }}</label>
-                    
-                </div>
-                
-            @endforeach
-            @error('selectedCategories') <span class="small text-danger">{{ $message }}</span> @enderror
+            </div>  
+
+            <div>
+                <label for="categories">Scegli una o più categorie:</label>
+                @foreach ($categories as $category)            
+                    <div>
+                        <input type="checkbox" id="{{ $category->id }}" value="{{ $category->id}}" wire:model="selectedCategories">
+                        <label  for="{{ $category->id }}">{{ $category->name }}</label>
+                    </div>
+                @endforeach
+                    @error('selectedCategories') <span class="small text-danger">{{ $message }} oppure crea una nuova categoria</span> 
+                    <a class="btn btn-danger mb-lg-0 my-2 me-2 margin" href={{route('categories.create')}}>Crea categoria
+                    </a>
+                    @enderror
             </div>
-               {{-- <label for="category"></label>
-               <select wire:model.defer="category" id="category" name="category" class="form-control">
-                  <option value="">
-                       Scegli Categoria
-                  </option>
-                  @foreach ($categories as $category)
-                  @switch(session('locale'))
-                               @case('en')
-                               <option value="{{$category->id}}">{{$category->English}}</option>
-                               @break
-                               @case('es')
-                               <option value="{{$category->id}}">{{$category->Spanish}}</option>
-                               @break
-                               
-                               @default
-                               <option value="{{$category->id}}">{{$category->name}}</option>
-                               @endswitch
-                  @endforeach
-                      
-               </select> --}}
-                  @error('category') <span class="small text-danger">{{$message}}</span>@enderror
            </div>
        
            {{-- <div class="my-3">

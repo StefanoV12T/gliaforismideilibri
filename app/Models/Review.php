@@ -9,7 +9,7 @@ class Review extends Model
 {
     use HasFactory;
 
-    protected $fillable=['title','body'];
+    protected $fillable=['title','body','author',];
 
     public function categories(){
         return $this->belongsToMany(Category::class);

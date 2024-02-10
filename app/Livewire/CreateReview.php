@@ -15,13 +15,17 @@ class CreateReview extends Component
     #[Validate]
     public $body;
     #[Validate]
+    public $author;
+    #[Validate]
     public $selectedCategories=[];
+    public $category_id;
     
     public function rules()
     {
         return [
             'title' => 'required|min:3',
             'body' => 'required|min:10',
+            'author'=> 'required|min:3',
             'selectedCategories' => 'required',
         ];
     }
@@ -34,28 +38,49 @@ class CreateReview extends Component
     public function store()
     {
 
-        $validated = $this->validate();
-        
-        
-        $review=Review::create($validated);
+        foreach ($this->selectedCategories as $category) {
+            $validated = $this->validate();
 
-        //dd($this->selectedCategories);
-        // $review = new review();
-        // $review->title = $this->title;
-        // $review->body = $this->body;
+            $review=Review::create($validated);
         
-        $review->user_id=auth()->user()->id;
-        
-        
-        $review->categories()->attach($this->selectedCategories);
-        $review->save();
-        session()->flash('success','Recensione creata con successo');
+            $review->user_id=auth()->user()->id;
+            $review->category_id=$category;
+            $review->categories()->attach($category);
+            $review->save();
+            session()->flash('success','Recensione creata con successo');  
+        }
         $this->cleanForm();
+
+
+        //FUNZIONA MA NON INSERISCE L'ID CATEGORY NELLA TABELLA REVIEW
+
+        // $validated = $this->validate();
+        
+        
+        // $review=Review::create($validated);
+
+        // //dd($this->selectedCategories);
+        // // $review = new review();
+        // // $review->title = $this->title;
+        // // $review->body = $this->body;
+        
+        // $review->user_id=auth()->user()->id;
+        // //$review->category_id=$this->selectedCategories;
+        // // dd($this->selectedCategories);
+        // // foreach ($this->selectedCategories as $category) {
+        // //     dd($category);
+        // //     $review->categories()->attach($category->id);
+        // // }
+        // $review->categories()->attach($this->selectedCategories);
+        // $review->save();
+        // session()->flash('success','Recensione creata con successo');
+        // $this->cleanForm();
     }
 
     public function cleanForm(){
         $this->title="";
         $this->body="";
+        $this->author="";
         $this->selectedCategories=[];
     }
 

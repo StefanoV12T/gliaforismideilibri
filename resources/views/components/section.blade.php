@@ -1,12 +1,13 @@
 <div class="container ">
     <div class="row ms-5">
+        @dd($reviews)
         <div class="col-12 col-lg-5 myHeight my-5"><img src="{{asset('img\OIP (1).jfif')}}" alt="" class="img-fluid card h-100">
         <h3 class="text-white">Titolo</h3>
-        <a href="{{route('show-review')}}">leggi recensione</a>
+        <a href="<a href="{{route('show-review', $review)}}" class="btn w-100 btn-warning">Leggi recensione</a>">leggi recensione</a>
         <p  class="text-white">questa è la <strong>recensione</strong></p>
         </div>
         <div class="col-12 col-lg-5 myHeight my-5"><img src="{{asset('img/download.jfif')}}" alt="" class="img-fluid card h-100"><h3 class="text-white">Titolo</h3>
-        <a href="{{route('show-review')}}">leggi recensione</a>
+        <a href="<a href="{{route('show-review', $review)}}" class="btn w-100 btn-warning">Leggi recensione</a>">leggi recensione</a>
         <p  class="text-white">questa è la <strong>recensione</strong></p>
         </div>
     </div>
