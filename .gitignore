@@ -7,11 +7,14 @@
 .env
 .env.backup
 .env.production
+.htaccess
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml
+index.old.php.old
 auth.json
 npm-debug.log
+ver.php
 yarn-error.log
 /.fleet
 /.idea
