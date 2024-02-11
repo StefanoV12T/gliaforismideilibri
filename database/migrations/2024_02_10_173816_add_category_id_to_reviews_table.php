@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::table('reviews', function (Blueprint $table) {
             // 
-            $table->unsignedBigInteger('category_id')->after('body')->nullable();
+            $table->unsignedBigInteger('category_id')->after('body')->nullable()->onDelete('SET NULL');
             // $table->array('category_id')->after('body')->nullable();
-            $table->foreign('category_id')->references('id')->on('categories')->onDelete('SET NULL');
+            $table->foreign('category_id')->references('id')->on('categories')->nullable()->onDelete('SET NULL');
 
 
            

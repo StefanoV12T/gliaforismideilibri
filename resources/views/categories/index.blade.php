@@ -23,7 +23,7 @@
                     
                     <th class="border-top py-3 border-black" scope="row">{{$category['id']}}</th>
                     <td class="border-top py-3 border-black">{{$category['name']}}</td>
-                    <td class="border-top py-3 border-black">>
+                    <td class="border-top py-3 border-black">
                         @foreach ($category->reviews as $article )
                         {{$article->title}}
                             

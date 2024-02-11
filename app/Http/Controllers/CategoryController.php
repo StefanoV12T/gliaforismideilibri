@@ -49,6 +49,7 @@ class CategoryController extends Controller
      
     public function destroy(Category $category)
     {
+        // dd($category);
         $category->delete();
         return redirect()->back()->with(['success'=>'Categoria cancellata correttamente']);
 
