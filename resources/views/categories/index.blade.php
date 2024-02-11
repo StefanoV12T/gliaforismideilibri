@@ -1,6 +1,6 @@
 <x-main>
     @if (session()->has('success'))
-    <div class="alert alert-success">
+    <div class="alert alert-success m-5">
         {{session('success')}}
     </div>
     @endif
@@ -11,27 +11,24 @@
               <tr>
                 <th class=" py-2" scope="col">Id</th>
                 <th class=" py-2" scope="col">Categoria</th>
+                <th class=" py-2" scope="col">Recensioni</th>
                 <th class=" py-2" scope="col">Autore Categoria</th>
                 <th class=" py-2" scope="col">Opzioni</th>
               </tr>
             </thead>
            
             <tbody>
-                
-    
-               
-                {{-- @dd(count($categories)) --}}
                 @foreach ($categories as $category )
                 
                     
                     <th class="border-top py-3 border-black" scope="row">{{$category['id']}}</th>
                     <td class="border-top py-3 border-black">{{$category['name']}}</td>
-                    {{-- <td>
-                        @foreach ($category->articles as $article )
+                    <td class="border-top py-3 border-black">>
+                        @foreach ($category->reviews as $article )
                         {{$article->title}}
                             
                         @endforeach
-                    </td> --}}
+                    </td>
                     <td class="border-top border-black">{{$category['category_author_name']}}</td>
                     <td class="border-top border-black"><a class="btn btn-warning" href="{{route('categories.edit', $category)}}">modifica</a>
                         <form  class="d-inline" action="{{route('categories.destroy', $category)}}" method="POST">
@@ -52,6 +49,7 @@
           <button class="btn btn-danger btn-lg" id="submitButton" type="submit">Aggiungi Categoria</button>
       </form>
       @endif     
+      
 
 
 </x-main>

@@ -1,6 +1,7 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-      <a class="navbar-brand" href={{route('welcome')}}>Gli aforismi dei libri</a>
+
+      <a class="navbar-brand" href={{route('welcome')}}> <img class="nav-image" src="{!! asset('favicon5.ico') !!}" alt=""> Gli aforismi dei libri</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -50,15 +51,18 @@
                   </li>
               </ul>
           </li>
-          <li>
-            <a class="btn btn-warning mb-lg-0 mb-2 me-2 margin" href={{route('categories.create')}}>Crea categoria
+          <li class="nav-item dropdown btn btn-warning py-0">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Menù recensore
             </a>
-            <a class="btn btn-warning mb-lg-0 mb-2 me-2 margin" href={{route('create-review')}}>Scrivi recensione
-            </a>
-            <a class="btn btn-warning mb-lg-0 mb-2 me-2 margin" href={{route('categories.index')}}>Gestisci Categorie
-            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item py-0" href={{route('categories.create')}}>Crea categoria</a></li>
+              <hr>
+              <li><a class="dropdown-item py-0" href={{route('create-review')}}>Scrivi recensione</a></li>
+              <hr>
+              <li><a class="dropdown-item py-0" href={{route('categories.index')}}>Gestisci Categorie</a></li>
+            </ul>
           </li>
-          
           @endguest
         </ul>
         <form class="d-flex" role="search">

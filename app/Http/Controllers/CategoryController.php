@@ -39,8 +39,8 @@ class CategoryController extends Controller
     public function update(Request $request, Category $category)
     {
         $category->fill($request->all())->save();
-        return redirect()->back()->with(['success'=>'Categoria modificata correttamente']);
-
+        //return redirect()->back()->with(['success'=>'Categoria modificata correttamente']);
+        return redirect()->route('categories.index')->with(['success'=>'Categoria modificata correttamente']);
         
     }
 

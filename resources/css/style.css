@@ -25,3 +25,7 @@ body{
     border-color: #fffacc;
     border: solid 1px;
   }
+
+.nav-image{
+    width: 50px;
+}
