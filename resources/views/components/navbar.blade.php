@@ -26,33 +26,34 @@
           <li class="nav-item">
             <a class="nav-link disabled" aria-disabled="true">Disabled</a>
           </li>
+        </ul>
           @guest
-          <li class="nav-item">
-              <a class="nav-link" href="{{ route('login') }}">Login</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link" href="{{ route('register') }}">Registrati</a>
-          </li>
+          
+              <a class="nav-link nav-item me-2" href="{{ route('login') }}">Login</a>
+          
+          
+              <a class="nav-link nav-item me-2" href="{{ route('register') }}">Registrati</a>
+          
         @else
-          <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+          <div class="nav-item dropdown me-2">
+              <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown"
                   aria-expanded="false">
                   {{ auth()->user()->name }}
               </a>
               <ul class="dropdown-menu">
-                  <li>
-                      <form action="{{ route('logout') }}" method="POST">
-                          @csrf
-                          <div class="d-flex justify-content-center">
-                              <button type="submit" class="">Esci
-                                  </button>
-                          </div>
-                      </form>
-                  </li>
+                <li>
+                  <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <div class="d-flex justify-content-center">
+                      <button type="submit" class="">Esci
+                      </button>
+                    </div>
+                  </form>
+                </li>
               </ul>
-          </li>
-        </ul>
-          <li class="nav-item dropdown btn btn-warning py-2 me-2">
+            </div>
+        
+          <li class="nav-item dropdown btn btn-warning py-2 me-2 my-2">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Menù recensore
             </a>
@@ -65,8 +66,8 @@
             </ul>
           </li>
           @endguest
-        {{-- </ul> --}}
-        <form class="d-flex" role="search">
+        </ul>
+        <form class="d-flex " role="search">
           <input class="form-control me-2" type="search" placeholder="Cerca" aria-label="Search">
           <button class="btn btn-outline-dark" type="submit">Cerca</button>
         </form>
