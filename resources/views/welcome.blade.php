@@ -1,6 +1,7 @@
 <x-main>
    
-    {{-- <x-section/> --}}
+    <x-section :reviews="$reviews"/>
+{{-- segue backup x-section --}}
     <div class="container">
         <div class="row">
             <div class="col-12 overlay my-5 card">
@@ -34,5 +35,51 @@
             </div>
         </div>
     </div>
-    
+
+    @foreach ($reviews as $review)
+    <div class="flip-card-container" >
+        <div class="flip-card">
+      
+          <div class="card-front">
+            <figure>
+              <div class="img-bg"></div>
+              <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Brohm Lake">
+              <figcaption><h5 class="card-title p-1 title-dimension overflow-hidden" >{{$review->title}}</h5>
+                <span>di</span>
+                <h6 class="d-inline">{{$review->author}}</h6></figcaption>
+              
+            </figure>
+            <ul class="ul px-0">
+              <li class="li"> <p class="card-footer">Recensito il: {{$review->created_at->format('d/m/y')}} </p></li>
+              <li class="li"><p class="card-footer">Da: {{$review->user->name}}</p></li>
+              <li class="li">Categorie: </li>
+              @foreach ($review->categories as $category)
+                               <li class="li">{{$category->name}}</li>                              
+                               @endforeach 
+            </ul>
+          </div>
+      
+          <div class="card-back">
+            <figure>
+              <div class="img-bg"></div>
+              <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Brohm Lake">
+            </figure>
+      
+            <a href="{{route('show-review', $review)}}" class="btn button t-w">Leggi recensione</a>
+      
+            <div class="design-container">
+              <span class="design design--1"></span>
+              <span class="design design--2"></span>
+              <span class="design design--3"></span>
+              <span class="design design--4"></span>
+              <span class="design design--5"></span>
+              <span class="design design--6"></span>
+              <span class="design design--7"></span>
+              <span class="design design--8"></span>
+            </div>
+          </div>
+      
+        </div>
+      </div>    
+      @endforeach
 </x-main>
