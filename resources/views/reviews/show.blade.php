@@ -46,15 +46,16 @@
                 <div class="card-body fw-bold">
                     {{-- <h5 class="card-title mt-3">{{$review->title}}</h5> --}}
                     <p class="card-text mt-5">{{$review->body}}</p>
-                    <p class="card-text">{{__('ui.price')}}: €{{$review->price}}</p>
-                    @if ($review->category_id)
+                    <p>Categorie:</p>
+                    @if ($review->categories)
+                        @foreach ($review->categories as $category)
+                            <a class="btn  h-10 btn-warning p-1" href="{{route('categories-searched', $category)}}">{{$category->name}}</a>                              
+                        @endforeach                       
+                    @endif  
+                    <hr>                               
+                    <p class="card-footer">recensito il {{$review->created_at->format('d/m/y')}}, <br>Da: 
                         
-                    <a href="{{route('categories-searched',['category'=>$review->category_id])}}" class=" my-3 btn btn-warning">{{$review->category_id}}: 
-                       
-                    @endif                                 
-                    <p class="card-footer">recensito il , <br>Da: 
-                        
-                        {{$review->author}}</p>
+                        {{$review->user->name}}</p>
                         
 
                     @guest

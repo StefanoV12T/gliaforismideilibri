@@ -4,7 +4,7 @@
         {{session('success')}}
     </div>
     @endif
-    @if(count($categories)>0)  
+    {{-- @if(count($categories)>0)   --}}
     <div class="container card overlay mt-5">
         <table class="">
             <thead>
@@ -44,11 +44,11 @@
           </table>
     </div>
     
-      @else
+      {{-- @else --}}
       <form  class="container text-center mt-5" action="{{route('categories.create')}}" method="get">
           <button class="btn btn-danger btn-lg" id="submitButton" type="submit">Aggiungi Categoria</button>
       </form>
-      @endif     
+      {{-- @endif      --}}
       
 
 

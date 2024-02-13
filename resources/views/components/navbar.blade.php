@@ -51,7 +51,8 @@
                   </li>
               </ul>
           </li>
-          <li class="nav-item dropdown btn btn-warning py-0">
+        </ul>
+          <li class="nav-item dropdown btn btn-warning py-2 me-2">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Menù recensore
             </a>
@@ -64,7 +65,7 @@
             </ul>
           </li>
           @endguest
-        </ul>
+        {{-- </ul> --}}
         <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Cerca" aria-label="Search">
           <button class="btn btn-outline-dark" type="submit">Cerca</button>
