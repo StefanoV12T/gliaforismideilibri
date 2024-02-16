@@ -1,6 +1,6 @@
 @foreach ($reviews as $review)
                     
-                    <div class="col-12 col-md-6 col-lg-4 my-4">
+                    <div class="col-12 col-md-6 col-xl-4 my-4">
                       <div class="flip-card-container" >
                             <div class="flip-card">      
                               <div class="card-front">
