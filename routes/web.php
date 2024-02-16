@@ -25,7 +25,9 @@ Route::get('/category_searched/{category}', [HomeController::class, 'searched'])
 
 Route::get('/show/{review}',[ReviewController::class, 'show'] )->name('show-review');
 
-Route::get('/nuova/revisione', [ReviewController::class, 'createReview'])->name('create-review')->middleware(['auth']);
+Route::get('/new/review', [ReviewController::class, 'createReview'])->name('create-review')->middleware(['auth']);
+
+Route::get('/all/reviews', [ReviewController::class, 'indexReviews'])->name('all-reviews');
 
 
 Route::middleware(['auth'])->group(function () {
