@@ -70,7 +70,7 @@
                    {{-- @endif --}}
                    @empty
                    
-                    <div class="col-12 text-center p-5">
+                    <div class="col-12 text-center p-5 text-white">
                         <p class="h4">Non ci sono recensioni per questa categoria</p>
                         <p class= "h4">Pubblica una nuova recensione: <a href="{{route ('create-review')}}"class="btn-warning btn shadow"> Scrivi recensione</a></p>
                     </div>
