@@ -78,7 +78,7 @@
                     
                     
                     <div style="height: 150px"></div>
-                    {{$reviews->appends(Request::except('page'))->links()}}
+                    {{-- {{$reviews->appends(Request::except('page'))->links()}} --}}
                     @endforelse
                 </div>
             </div>
