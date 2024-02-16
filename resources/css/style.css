@@ -31,3 +31,20 @@ body{
     width: 50px;
 }
 
+.text-gla {
+    color:rgb(205, 119, 119)
+}
+
+.text-gla:hover{
+    color:grey;
+}
+
+.bg-gla{
+    background-color:rgb(141, 10, 10) !important;
+}
+
+.pagination{
+    --bs-pagination-active-color:none;
+    --bs-pagination-active-bg: rgb(141, 10, 10);
+    --bs-pagination-active-border-color: #0f151f;
+}
