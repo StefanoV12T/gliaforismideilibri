@@ -13,8 +13,6 @@ class ReviewerController extends Controller
 {
     public function becomeReviewer() {
         Mail::to('postmaster@gliaforismideilibri.it')->send(new BecomeReviewer(Auth::user()));
-        Mail::to('stefanociangola@gmail.com')->send(new BecomeReviewer(Auth::user()));
-
         return redirect()->back()->with('success', 'Complimenti, hai richiesto di diventare recensore');        
     }
 
