@@ -16,7 +16,6 @@ class CreateReview extends Component
     public $images=[];
     public $image;
 
-
     #[Validate] 
     public $title;
     #[Validate]
@@ -73,6 +72,11 @@ class CreateReview extends Component
         foreach ($this->selectedCategories as $category) {
             $review->categories()->attach($category);
         }
+        if(count($this->images)){
+            foreach ($this->images as $image) {
+                $review->images()->create(['path'=>$image->store('images','public')]);
+            }
+        }
         $review->save();
         session()->flash('success','Recensione creata con successo');  
         $this->cleanForm();        
@@ -83,6 +87,10 @@ class CreateReview extends Component
         $this->body="";
         $this->author="";
         $this->selectedCategories=[];
+        $this->temporary_images=[];
+        $this->image="";
+        $this->images=[];
+
     }
 
     // public function updated($propertyName){
