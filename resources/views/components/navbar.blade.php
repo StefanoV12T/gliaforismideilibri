@@ -52,7 +52,7 @@
                 </li>
               </ul>
             </div>
-        
+              @if(auth()->user()->is_reviewer)
           <li class="nav-item dropdown btn btn-warning py-2 me-2 my-2">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Menù recensore
@@ -65,6 +65,19 @@
               <li><a class="dropdown-item py-0" href={{route('categories.index')}}>Gestisci Categorie</a></li>
             </ul>
           </li>
+            @endif
+            @if (auth()->user()->is_revisor)
+              <li class="nav-link">
+                <a href="{{route('revisor-index')}}" class="btn btn-outline-secondary me-2 mb-lg-0 mb-2 position-relative" aria-current="page">Zona Revisore</a>
+                @if (App\Models\Review::toBeRevisionedCount()>0)
+                <span class="position-absolute top-5 star-100 translate-middle badge rounded-pill bg-warning text-dark ">{{App\Models\Review::toBeRevisionedCount()}}
+                  <span class="visually-hidden">unread message
+                  </span>
+                </span>  
+              </a>                
+                @endif
+              </li>
+            @endif
           @endguest
         </ul>
         <form class="d-flex " role="search">

@@ -1,11 +1,13 @@
 <?php
 
+use App\Livewire\CreateReview;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\ReviewsController;
+use App\Http\Controllers\RevisorController;
 use App\Http\Controllers\CategoryController;
-use App\Livewire\CreateReview;
+use App\Http\Controllers\ReviewerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +30,20 @@ Route::get('/show/{review}',[ReviewController::class, 'show'] )->name('show-revi
 Route::get('/new/review', [ReviewController::class, 'createReview'])->name('create-review')->middleware(['auth']);
 
 Route::get('/all/reviews', [ReviewController::class, 'indexReviews'])->name('all-reviews');
+
+//home recensore
+Route::get('reviewer/home',[ReviewerController::class, 'index'])->name('reviewer-index');
+
+
+//home revisore
+Route::get('revisor/home',[RevisorController::class, 'index'])->name('revisor-index');
+
+//accetta recensione
+Route::patch('accept/review/{review}',[RevisorController::class, 'acceptReview'])->name('revisor.accept_review');
+
+//rifiuta recensione
+Route::patch('reject/review/{review}',[RevisorController::class, 'rejectReview'])->name('revisor.reject_review');
+
 
 
 Route::middleware(['auth'])->group(function () {
