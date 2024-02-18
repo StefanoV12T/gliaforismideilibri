@@ -27,7 +27,7 @@ Route::get('/category_searched/{category}', [HomeController::class, 'searched'])
 
 Route::get('/show/{review}',[ReviewController::class, 'show'] )->name('show-review');
 
-Route::get('/new/review', [ReviewController::class, 'createReview'])->name('create-review')->middleware(['auth']);
+Route::get('/new/review', [ReviewController::class, 'createReview'])->name('create-review')->middleware('isReviewer');
 
 Route::get('/all/reviews', [ReviewController::class, 'indexReviews'])->name('all-reviews');
 
@@ -36,17 +36,29 @@ Route::get('reviewer/home',[ReviewerController::class, 'index'])->name('reviewer
 
 
 //home revisore
-Route::get('revisor/home',[RevisorController::class, 'index'])->name('revisor-index');
+Route::get('revisor/home',[RevisorController::class, 'index'])->name('revisor-index')->middleware('isRevisor');
 
 //accetta recensione
-Route::patch('accept/review/{review}',[RevisorController::class, 'acceptReview'])->name('revisor.accept_review');
+Route::patch('accept/review/{review}',[RevisorController::class, 'acceptReview'])->name('revisor.accept_review')->middleware('isRevisor');
 
 //rifiuta recensione
-Route::patch('reject/review/{review}',[RevisorController::class, 'rejectReview'])->name('revisor.reject_review');
+Route::patch('reject/review/{review}',[RevisorController::class, 'rejectReview'])->name('revisor.reject_review')->middleware('isRevisor');
+
+//richiesta recensore
+Route::get('/richiesta/recensore',[ReviewerController::class, 'becomeReviewer'])->name('become.reviewer')->middleware('auth');
+
+//rendi recensore
+Route::get('/make/reviewer/{user}',[ReviewerController::class, 'makeReviewer'])->name('make.reviewer');
+
+//richiesta revisore
+Route::get('/richiesta/revisore',[RevisorController::class, 'becomeRevisor'])->name('become.revisor')->middleware('isReviewer');
+
+//rendi revisore
+Route::get('/make/revisor/{user}',[RevisorController::class, 'makeRevisor'])->name('make.revisor');
 
 
-
-Route::middleware(['auth'])->group(function () {
+//gestione categorie
+Route::middleware(['isReviewer'])->group(function () {
     Route::resource('categories', \App\Http\Controllers\CategoryController::class);
 });
 

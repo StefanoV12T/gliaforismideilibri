@@ -1,4 +1,8 @@
 <x-main>
+
+    <x-success/>
+    <x-denied/>
+
     <h1>{{$review_to_check ? 'Ecco la recensione da controllare' : 'Non ci sono recensioni da controllare'}}</h1>
 
     @if ($review_to_check)

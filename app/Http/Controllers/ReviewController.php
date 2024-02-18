@@ -19,7 +19,7 @@ class ReviewController extends Controller
     }
 
     public function indexReviews(){
-        $reviews=Review::orderBy('created_at','desc')->paginate(9);
+        $reviews=Review::where('is_accepted', true)->orderBy('created_at','desc')->paginate(9);
         return view('reviews.index', compact('reviews'));
     }
 }

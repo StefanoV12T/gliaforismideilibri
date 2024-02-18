@@ -1,5 +1,6 @@
 <x-main>
-   
+   <x-message/>
+   <x-success/>
   {{-- segue backup x-section --}}
   <div class="container">
     <div class="row">
