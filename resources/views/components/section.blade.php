@@ -1,19 +1,20 @@
 @foreach ($reviews as $review)
-                    
+
                     <div class="col-12 col-md-6 col-xl-4 my-4">
                       <div class="flip-card-container" >
                             <div class="flip-card">      
                               <div class="card-front">
                                 <figure>
-                                  <div class="img-bg"></div>
-                                  @if ($review->images)
+                                  <div class="img-bg @if($loop->first)active @endif "></div>
+                                  @if (!$review->images()->get()->isEmpty())
                                   @foreach ($review->images as $image)
                                       
-                                  <img src="{{Storage::url($image->path)}}" alt="Brohm Lake">
+                                  <img src="{{Storage::url($image->path)}}" class="img-fluid" alt="Brohm Lake">
                                   @endforeach
-                                    
+                                  @else
+                                  <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Brohm Lake">  
                                   @endif
-                                  {{-- <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Brohm Lake"> --}}
+
                                   <figcaption><h5 class="card-title p-1 title-dimension overflow-hidden" >{{$review->title}}</h5>
                                     <span>di</span>
                                     <h6 class="d-inline">{{$review->author}}</h6></figcaption>              
@@ -30,8 +31,16 @@
                           
                               <div class="card-back">
                                 <figure>
-                                  <div class="img-bg"></div>
+                                  <div class="img-bg "></div>
+                                  
+                                  @if (count($review->images)>1)
+                                  
+                                      
+                                  <img src="{{Storage::url($review->images[1]->path)}}" class="img-fluid" alt="Brohm Lake">
+                                  @else
                                   <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Brohm Lake">
+                                    
+                                  @endif
                                 </figure>
                                     <a href="{{route('show-review', $review)}}" class="btn button  t-w">Leggi recensione</a>      
                                 <div class="design-container">
