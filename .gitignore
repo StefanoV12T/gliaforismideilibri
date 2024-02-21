@@ -18,4 +18,4 @@ ver.php
 yarn-error.log
 /.fleet
 /.idea
-
+composer.lock

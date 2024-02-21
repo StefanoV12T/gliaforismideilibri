@@ -6,7 +6,13 @@
                               <div class="card-front">
                                 <figure>
                                   <div class="img-bg"></div>
-                                  <img src="{{$review->images()->first()}}" alt="Brohm Lake">
+                                  @if ($review->images)
+                                  @foreach ($review->images as $image)
+                                      
+                                  <img src="{{Storage::url($image->path)}}" alt="Brohm Lake">
+                                  @endforeach
+                                    
+                                  @endif
                                   {{-- <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Brohm Lake"> --}}
                                   <figcaption><h5 class="card-title p-1 title-dimension overflow-hidden" >{{$review->title}}</h5>
                                     <span>di</span>
