@@ -28,6 +28,18 @@ class RevisorController extends Controller
         return redirect()->back()->with('denied', 'Hai rifiutato la recensione');
     }
 
+    public function cancelReview(Review $review){
+        $review->setAccepted(null);
+        $review->save();
+        $review=[];
+        $review_to_check=Review::where('is_accepted', null)->first();
+        $refusedreviews=Review::where('is_accepted', false)->get();
+        // return view('revisor.index', compact('review_to_check','review','refusedreviews')); //torna direttamente in zona revisore
+        //return redirect()->back()->with('message', 'Complimenti, hai annullato l\'annuncio');
+        return redirect('/')->with('message', 'Hai annullato l\'annuncio, controlla la zona revisore'); //torna alla home
+
+    }
+
     public function becomeRevisor() {
         Mail::to('postmaster@gliaforismideilibri.it')->send(new BecomeRevisor(Auth::user()));
         return redirect()->back()->with('success', 'Complimenti, hai richiesto di diventare revisore');        

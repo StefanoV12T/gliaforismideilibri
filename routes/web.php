@@ -41,6 +41,10 @@ Route::get('revisor/home',[RevisorController::class, 'index'])->name('revisor-in
 //accetta recensione
 Route::patch('accept/review/{review}',[RevisorController::class, 'acceptReview'])->name('revisor.accept_review')->middleware('isRevisor');
 
+
+// Annulla recensione
+Route::patch('/cancel/review/{review}',[RevisorController::class, 'cancelReview'])->name('revisor.cancel_review')->middleware('isRevisor');
+
 //rifiuta recensione
 Route::patch('reject/review/{review}',[RevisorController::class, 'rejectReview'])->name('revisor.reject_review')->middleware('isRevisor');
 

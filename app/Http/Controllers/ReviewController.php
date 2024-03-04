@@ -11,7 +11,9 @@ use Illuminate\View\View;
 class ReviewController extends Controller
 {   
     public function show(Review $review){
-        return view('reviews.show', compact('review'));
+        if ($review->is_accepted==true){
+            return view('reviews.show', compact('review'));
+        }
     }
 
     public function createReview(){

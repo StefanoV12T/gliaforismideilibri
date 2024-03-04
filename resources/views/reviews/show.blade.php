@@ -65,13 +65,13 @@
                         <div class="col-12 col-md-6 col-lg-5 mt-5 card h-100 pb-2 shadow-mrk border border-danger border-5">
                             <div>
                                 
-                                <h6 class="m-3"> {{__('ui.wantToCancel')}}</h6>
+                                <h6 class="m-3">Vuoi revisionare?</h6>
                             </div>
                                 <form  class="m-3" action="{{route('revisor.cancel_review', ['review'=>$review])}}" method="POST">
                                 @csrf
                                 @method('PATCH')
-                                    <span class="fw-bold">{{__('ui.useTheForce')}}</span>
-                                    <button class="btn btn-dark shadow py-0 neonText2 recall" type="submit">{{__("ui.recall")}}</button>
+                                    <span class="fw-bold">Clicca qui sotto</span>
+                                    <button class="btn btn-dark shadow py-0 neonText2 recall" type="submit">Revisiona</button>
                                 </form>
                         </div>      
                         @endif

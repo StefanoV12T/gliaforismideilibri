@@ -1,7 +1,5 @@
 <div class="container-fluid py-4 bg-dark text-light">
     <div class="row">
-        {{-- se l'utente non è loggato --}}
-       
         <div class="col-12 text-center">
             <a href="https://www.iubenda.com/privacy-policy/54894204" class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe " title="Privacy Policy ">Privacy Policy</a><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
 
