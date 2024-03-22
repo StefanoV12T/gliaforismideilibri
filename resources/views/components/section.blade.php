@@ -20,7 +20,7 @@
                                     <h6 class="d-inline">{{$review->author}}</h6></figcaption>              
                                 </figure>
                                 <ul class="ul px-0">
-                                  <li class="li"> <p class="card-footer">Recensito il: {{$review->created_at->format('d/m/y')}} </p></li>
+                                  <li class="li fs-6"> <p class="card-footer">Recensito il: {{$review->created_at->format('d/m/y')}} </p></li>
                                   <li class="li"><p class="card-footer">Da: {{$review->user->name}}</p></li>
                                   <li class="li">Categorie: </li>
                                   @foreach ($review->categories as $category)

@@ -7,12 +7,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" href="{!! asset('favicon5.ico') !!}"/>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playpen+Sans:wght@100..800&display=swap" rel="stylesheet">
+
   </head>
   <body>
     <x-navbar/>
     {{$slot}}  
     {{-- @include('cookie-consent::index')  --}}
     <x-footer/>
-    <x-banner-cookies/>
+    {{-- <x-banner-cookies/> --}}
   </body>
 </html>

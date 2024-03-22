@@ -5,6 +5,7 @@
     --white-2: hsl(0, 0%, 80%);
     --dark: hsl(var(--hue), 25%, 10%);
     --grey: hsl(0, 0%, 50%);
+    --green: #b9cfb6;
   
     width: 310px;
     height: 500px;
@@ -30,6 +31,7 @@
   }
   
   /* .card-... */
+
   .card-front,
   .card-back {
     width: 100%;
@@ -88,11 +90,12 @@
   /* figcaption */
   figcaption {
     display: block;
-  
+    
     width: auto;
     margin-top: 12%;
     padding: 8px 22px;
   
+    
     font-weight: bold;
     line-height: 1.6;
     letter-spacing: 2px;
@@ -103,13 +106,13 @@
     top: 0;
     right: 12px;
   
-    color: var(--white-1);
-    background: hsla(var(--hue), 25%, 10%, .5);
+    color:var(--green);
+    background: hsla(var(--hue), 25%, 10%, .85);
   }
   
   /* .img-bg */
   .img-bg {
-    background: hsla(var(--hue), 25%, 10%, .5);
+    background: hsla(var(--hue), 25%, 10%, .7);
   }
   
   .card-front .img-bg {
@@ -154,7 +157,8 @@
     height: 100%;
   
     list-style: none;
-    color: var(--white-1);
+    /* color: var(--white-1); */
+    color: var(--green);
   
     display: flex;
     justify-content: center;
@@ -175,7 +179,7 @@
   }
   
   .li:nth-child(2n) {
-    color: var(--white-2);
+    color: var(--green);
   }
   
   .li:not(:last-child)::after {
