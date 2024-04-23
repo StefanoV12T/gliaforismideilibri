@@ -4,12 +4,12 @@
     "src": "public/img/GettyImages-909045284-1.jpg"
   },
   "resources/css/app.css": {
-    "file": "assets/app-62d01ad5.css",
+    "file": "assets/app-60c32f23.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },
   "resources/js/app.js": {
-    "file": "assets/app-a83ed21d.js",
+    "file": "assets/app-2f9fd87d.js",
     "isEntry": true,
     "src": "resources/js/app.js"
   }
