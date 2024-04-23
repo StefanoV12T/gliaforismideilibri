@@ -16,7 +16,9 @@
     <x-navbar/>
     {{$slot}}  
     {{-- @include('cookie-consent::index')  --}}
-    <x-footer/>
-    <x-banner-cookies/>
+    <footer class="footer">
+      <x-footer/>
+      <x-banner-cookies/>
+    </footer>
   </body>
 </html>

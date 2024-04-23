@@ -6,6 +6,9 @@ body{
     font-optical-sizing: auto;
     font-weight: weight;
     font-style: normal;
+
+    height: 100%;
+
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -24,6 +27,16 @@ h1, h2, h3, h4, h5, h6 {
 
 .myHeight{
     height: 300px;
+}
+
+.footer{
+}
+
+.space{
+    height: 300px;
+}
+.space2{
+    height: 100px;
 }
 
 .js-cookie-consent{
