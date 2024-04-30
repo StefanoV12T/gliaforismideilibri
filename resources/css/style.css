@@ -24,6 +24,12 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #7b4a4a9c;
     
 }
+.overlayRevisor{
+       
+    /* background-color: #d4cb9fa9; */
+    background-color: #7b764a9c;
+    
+}
 
 .myHeight{
     height: 300px;
