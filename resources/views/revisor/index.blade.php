@@ -58,7 +58,7 @@
             
                 @endif
                 @if($reviews_refused)
-                 <h2>Lista articoli rifiutati </h2>
+                 <h2>Lista recensioni rifiutate </h2>
 
                  @foreach ($reviews_refused as $refused)
                         
