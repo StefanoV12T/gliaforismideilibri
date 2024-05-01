@@ -13,7 +13,8 @@ use Illuminate\Support\Facades\Artisan;
 class RevisorController extends Controller
 {
     public function index(){
-        $reviews_refused=Review::all()->where('is_accepted', FALSE&& !null);
+        $reviews_refused=Review::where('is_accepted', false)->whereNotNull('is_accepted')
+        ->get();;
         $review_to_check=Review::where('is_accepted', null)->first();
 
         return view('revisor.index', compact ('reviews_refused','review_to_check'));
