@@ -10,9 +10,12 @@
 
                 <h1 class="card text-center bg-danger-subtle text-capitalize p-3 m-5">{{$review_to_check ? 'Ecco la recensione da controllare' : 'Non ci sono recensioni da controllare'}}</h1>
 
+                 
+
                 @if ($review_to_check)
-                    
+                   
                     <h2 class="bg-warning text-center p-2">{{$review_to_check->title}}</h2>
+                    
             
                     @if (!$review_to_check->images()->get()->isEmpty())
                     @foreach ($review_to_check->images as $image)
@@ -40,6 +43,7 @@
                         
                         
                         </form>
+                        
                 @else
                 <div class="space"></div>    
                 <div class="space2"></div>    
@@ -53,6 +57,31 @@
             
             
                 @endif
+                @if($reviews_refused)
+                 <h2>Lista articoli rifiutati </h2>
+
+                 @foreach ($reviews_refused as $refused)
+                        
+                
+                  <div class="my-2">
+                        
+
+                            <h6 class="bg-warning text-center p-2 d-inline">{{$refused->title}}</h6>
+                            {{$refused->is_acepted}}
+                            <form  class="m-3 d-inline" action="{{route('revisor.cancel_review', ['review'=>$refused])}}" method="POST">
+                            @csrf
+                            @method('PATCH')
+                                <button class="btn btn-dark shadow py-0 neonText2 recall" type="submit">Revisiona di nuovo</button>
+                            </form>
+                    </div>     
+
+                 @endforeach
+
+
+                   
+                    
+                    
+                    @endif
 
 
             </div>
