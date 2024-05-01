@@ -18,7 +18,7 @@
     {{-- @include('cookie-consent::index')  --}}
     <footer class="footer">
       <x-footer/>
-      {{-- <x-banner-cookies/> --}}
+      <x-banner-cookies/>
     </footer>
   </body>
 </html>
