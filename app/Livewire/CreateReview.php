@@ -1,11 +1,14 @@
 <?php
 
 namespace App\Livewire;
+
 use App\Models\Review;
 use Livewire\Component;
 use App\Models\Category;
+use App\Jobs\ResizeImage;
 use Livewire\WithFileUploads;
 use Livewire\Attributes\Validate;
+use Illuminate\Support\Facades\File;
 
 
 class CreateReview extends Component
@@ -74,8 +77,15 @@ class CreateReview extends Component
         }
         if(count($this->images)){
             foreach ($this->images as $image) {
-                $review->images()->create(['path'=>$image->store('images','public')]);
+                // $review->images()->create(['path'=>$image->store('images','public')]);
+                $newFileName="reviews/{$review->id}";
+                $newImage=$review-> images()->create(['path'=>$image->store($newFileName,'public')]);
+
+                dispatch(new ResizeImage($newImage->path, 400, 300));
             }
+
+            File::deleteDirectory(storage_path('/app/livewire-tmp'));
+
         }
         $review->save();
         session()->flash('success','Recensione creata con successo');  

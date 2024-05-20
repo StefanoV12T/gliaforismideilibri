@@ -9,7 +9,14 @@
                                   @if (!$review->images()->get()->isEmpty())
                                   @foreach ($review->images as $image)
                                       
-                                  <img src="{{Storage::url($image->path)}}" class="img-fluid" alt="Brohm Lake">
+                                  {{-- <img src="{{Storage::url($image->path)}}" class="img-fluid" alt="Brohm Lake"> --}}
+
+                                  <img src="
+                                  {{!$review->images()->get()->isEmpty() ? $review->images()->first()->getUrl(400,300) : 'https://picsum.photos/400/300'
+                                  }}" 
+                              class="card-img-top" alt="...">
+
+
                                   @endforeach
                                   @else
                                   <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Brohm Lake">  
@@ -37,6 +44,10 @@
                                   
                                       
                                   <img src="{{Storage::url($review->images[1]->path)}}" class="img-fluid" alt="Brohm Lake">
+
+
+                                  
+
                                   @else
                                   <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Brohm Lake">
                                     
