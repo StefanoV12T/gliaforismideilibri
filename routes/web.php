@@ -33,6 +33,9 @@ Route::get('/show/{review}',[ReviewController::class, 'show'] )->name('show-revi
 //crea recensione
 Route::get('/new/review', [ReviewController::class, 'createReview'])->name('create-review')->middleware('isReviewer');
 
+//modifica recensione
+Route::patch('/update/{review}', [ReviewController::class, 'edit'])->name('edit-review')->middleware('isReviewer');
+
 //cancella recensione
 Route::post('delete/{review}', [ReviewController::class, 'destroy'])->name('delete-review')->middleware('isReviewer');
 

@@ -29,4 +29,7 @@ class ReviewController extends Controller
         $review->delete();
         return redirect('/')->with('success', 'La recensione è stata cancellata');
     }
+    public function edit($review){
+        return view('reviews.update', compact('review'));
+    }
 }

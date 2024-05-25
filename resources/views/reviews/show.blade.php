@@ -68,6 +68,11 @@
                                 @method('post')
                                 <button class="btn btn-danger " id="submitButton" type="submit">Cancella Recensione</button>
                             </form>
+                            <form  class="d-inline" action="{{route('edit-review', $review)}}" method="POST">
+                                @csrf
+                                @method('patch')
+                                <button class="btn btn-warning" id="submitButton" type="submit">Modifica Recensione</button>
+                            </form>
                         @endif
                         @if (Auth::user()->is_revisor)
                         <div class="col-12 col-md-6 col-lg-5 mt-5 card h-100 pb-2 shadow-mrk border border-danger border-5">
