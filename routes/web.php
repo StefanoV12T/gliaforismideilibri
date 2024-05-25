@@ -24,17 +24,23 @@ use App\Http\Controllers\QueueStartController;
 
 Route::get('/',[HomeController::class, 'welcome'] )->name('welcome');
 
+//cerca tra le categorie
 Route::get('/category_searched/{category}', [HomeController::class, 'searched'])->name('categories-searched');
 
+//mostra recensione nel dettaglio
 Route::get('/show/{review}',[ReviewController::class, 'show'] )->name('show-review');
 
+//crea recensione
 Route::get('/new/review', [ReviewController::class, 'createReview'])->name('create-review')->middleware('isReviewer');
 
+//cancella recensione
+Route::post('delete/{review}', [ReviewController::class, 'destroy'])->name('delete-review')->middleware('isReviewer');
+
+//mostra tutte le recensioni
 Route::get('/all/reviews', [ReviewController::class, 'indexReviews'])->name('all-reviews');
 
 //home recensore
 Route::get('reviewer/home',[ReviewerController::class, 'index'])->name('reviewer-index');
-
 
 //home revisore
 Route::get('revisor/home',[RevisorController::class, 'index'])->name('revisor-index')->middleware('isRevisor');
@@ -67,4 +73,5 @@ Route::middleware(['isReviewer'])->group(function () {
     Route::resource('categories', \App\Http\Controllers\CategoryController::class);
 });
 
+//lancia le code
 Route::get('/run/queue/work',[QueueStartController::class, 'runResizeImage'])->name('run.queue');
