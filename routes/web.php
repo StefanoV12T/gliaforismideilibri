@@ -8,6 +8,7 @@ use App\Http\Controllers\ReviewsController;
 use App\Http\Controllers\RevisorController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ReviewerController;
+use App\Http\Controllers\QueueStartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -66,3 +67,4 @@ Route::middleware(['isReviewer'])->group(function () {
     Route::resource('categories', \App\Http\Controllers\CategoryController::class);
 });
 
+Route::get('/run/queue/work',[QueueStartController::class, 'runResizeImage'])->name('run.queue');
