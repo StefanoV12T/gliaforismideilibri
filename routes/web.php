@@ -27,13 +27,15 @@ Route::get('/',[HomeController::class, 'welcome'] )->name('welcome');
 //cerca tra le categorie
 Route::get('/category_searched/{category}', [HomeController::class, 'searched'])->name('categories-searched');
 
-//mostra recensione nel dettaglio
+//REVIEWS ROUTES
+
+//Mostra recensione nel dettaglio
 Route::get('/show/{review}',[ReviewController::class, 'show'] )->name('show-review');
 
-//crea recensione
+//Crea recensione
 Route::get('/new/review', [ReviewController::class, 'createReview'])->name('create-review')->middleware('isReviewer');
 
-//modifica recensione
+//Modifica recensione
 Route::patch('/update/{review}', [ReviewController::class, 'edit'])->name('edit-review')->middleware('isReviewer');
 
 //cancella recensione
@@ -52,22 +54,22 @@ Route::get('revisor/home',[RevisorController::class, 'index'])->name('revisor-in
 Route::patch('accept/review/{review}',[RevisorController::class, 'acceptReview'])->name('revisor.accept_review')->middleware('isRevisor');
 
 
-// Annulla recensione
+//Annulla recensione
 Route::patch('/cancel/review/{review}',[RevisorController::class, 'cancelReview'])->name('revisor.cancel_review')->middleware('isRevisor');
 
-//rifiuta recensione
+//Rifiuta recensione
 Route::patch('reject/review/{review}',[RevisorController::class, 'rejectReview'])->name('revisor.reject_review')->middleware('isRevisor');
 
-//richiesta recensore
+//Richiesta recensore
 Route::get('/richiesta/recensore',[ReviewerController::class, 'becomeReviewer'])->name('become.reviewer')->middleware('auth');
 
-//rendi recensore
+//Rendi recensore
 Route::get('/make/reviewer/{user}',[ReviewerController::class, 'makeReviewer'])->name('make.reviewer');
 
-//richiesta revisore
+//Richiesta revisore
 Route::get('/richiesta/revisore',[RevisorController::class, 'becomeRevisor'])->name('become.revisor')->middleware('isReviewer');
 
-//rendi revisore
+//Rendi revisore
 Route::get('/make/revisor/{user}',[RevisorController::class, 'makeRevisor'])->name('make.revisor');
 
 

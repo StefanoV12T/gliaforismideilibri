@@ -3,7 +3,6 @@
     <div class="container overlay card p-5 mt-5">
         <div class="row">
             <div class="col-md-6 col-12 ">
-            
                 <h2 class="neonText2">{{$review->title}}</h2>
                 <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
                   @if ($review->images)
@@ -68,7 +67,7 @@
                                 @method('post')
                                 <button class="btn btn-danger " id="submitButton" type="submit">Cancella Recensione</button>
                             </form>
-                            <form  class="d-inline" action="{{route('edit-review', $review)}}" method="POST">
+                            <form  class="d-inline" action="{{route('edit-review', ['review'=>$review])}}" method="POST">
                                 @csrf
                                 @method('patch')
                                 <button class="btn btn-warning" id="submitButton" type="submit">Modifica Recensione</button>
