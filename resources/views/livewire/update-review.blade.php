@@ -1,24 +1,24 @@
 <div class="container overlay my-5 card">
   <div class="row mx-5">
       <div class="col-12 col-lg-6">
-          <h2 class="my-5 neonText2">Crea Revisione</h2>
+          <h2 class="my-5 neonText2">Crea Recensione</h2>
         @if(session()->has('success'))
         {{-- <x-success/> --}}
         <div class="alert-success alert">
             {{session('success')}}
         </div>
         @endif
-    
-        <form wire:submit.prevent="store">
+    @dd($review->selectedCategories)
+        <form wire:submit.prevent="update">
            @csrf
           <div>
               <label for="title">Titolo del libro</label>
-              <input type="text" value="{{$review->title}}" class="form-control @error('title')is-invalid @enderror" wire:model.blur="title">
+              <input type="text" value="{{$review->body}}" class="form-control @error('title')is-invalid @enderror" wire:model.blur="title">
               @error('title') <span class="small text-danger">{{$message}}</span>@enderror
           </div>
           <div>
            <label for="author">Autore del libro</label>
-           <input type="text" class="form-control @error('author')is-invalid @enderror" wire:model.blur="author">
+           <input type="text" value="{{$review->author}}" class="form-control @error('author')is-invalid @enderror" wire:model.blur="author">
            @error('author') <span class="small text-danger">{{$message}}</span>@enderror
        </div>
            <div>

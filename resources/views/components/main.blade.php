@@ -15,10 +15,12 @@
   <body>
     <x-navbar/>
     {{$slot}}  
-    {{-- @include('cookie-consent::index')  --}}
+
+    {{-- coockie personalizzati --}}
+    {{-- @include('cookie-consent::index')   --}}
     <footer class="footer">
       <x-footer/>
-      <x-banner-cookies/>
+      {{-- <x-banner-cookies/> --}}
     </footer>
   </body>
 </html>

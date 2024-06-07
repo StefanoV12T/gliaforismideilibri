@@ -44,12 +44,35 @@ public $review;
 
     public function mount($review = null)
     {
+        // dd($review->Categories);
         $this->review = $review;
+        $this->title = $review->title;
+        $this->author =$review->author;
+        $this->body = $review->body;
+        $this->selectedCategories=$review->Categories;
+        dd( $this->selectedCategories);
     }
  
+    public function setPost(Review $review)
+    {
+      
+
+        $this->review = $review;
+ 
+      
+        
+    }
+
+    public function update()
+    {
+        $this->review->update(
+            $this->all()
+        );
+    }
 
     public function render()
     {
+        // dd(  $this->review);
         return view('livewire.update-review');
     }
 
