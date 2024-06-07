@@ -6,12 +6,13 @@ use App\Models\Review;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Livewire\Attributes\Validate;
+use Symfony\Contracts\Service\Attribute\Required;
 
 class UpdateReview extends Component
 {
     use WithFileUploads;
     
-    public $review;
+public $review;
     public $temporary_images;
     public $images=[];
     public $image;
@@ -25,6 +26,10 @@ class UpdateReview extends Component
     #[Validate]
     public $selectedCategories=[];
 
+    // public function __construct($review = null) {
+    //     // dd($review);
+    //     $this->$review = $review;
+    // }
     public function rules()
     {
         return [
@@ -37,11 +42,16 @@ class UpdateReview extends Component
         ];
     }
 
-    public function render(Review $review)
+    public function mount($review = null)
     {
-        $this->review=$review;
-        // $validated = $this->validate();
-        // $review=Review::create($validated);
-        return view('livewire.update-review', compact('review'));
+        $this->review = $review;
     }
+ 
+
+    public function render()
+    {
+        return view('livewire.update-review');
+    }
+
+
 }
