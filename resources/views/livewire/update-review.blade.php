@@ -8,7 +8,7 @@
             {{session('success')}}
         </div>
         @endif
-    @dd($review->selectedCategories)
+    {{-- @dd($review->Categories) --}}
         <form wire:submit.prevent="update">
            @csrf
           <div>
@@ -31,7 +31,7 @@
                <label for="categories">Scegli una o più categorie:</label>
                @foreach ($categories as $category)            
                    <div>
-                       <input type="checkbox" id="{{ $category->id }}" value="{{ $category->id}}" wire:model="selectedCategories">
+                       <input type="checkbox" id="{{ $category->id }}" value="{{ $category->id}}" wire:model.blur="selectedCategories">
                        <label  for="{{ $category->id }}">{{ $category->name }}</label>
                    </div>
                @endforeach

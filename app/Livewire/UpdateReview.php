@@ -49,8 +49,8 @@ public $review;
         $this->title = $review->title;
         $this->author =$review->author;
         $this->body = $review->body;
-        $this->selectedCategories=$review->Categories;
-        dd( $this->selectedCategories);
+        $this->selectedCategories=$review->Categories->pluck('id')->toArray();;
+        // dd( $this->selectedCategories[0]->id);
     }
  
     public function setPost(Review $review)
@@ -64,7 +64,7 @@ public $review;
     }
 
     public function update()
-    {
+    {   $this->review->categories()->sync($this->selectedCategories);
         $this->review->update(
             $this->all()
         );
