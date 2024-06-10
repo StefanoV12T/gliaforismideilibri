@@ -12,7 +12,7 @@ class UpdateReview extends Component
 {
     use WithFileUploads;
     
-public $review;
+    public $review;
     public $temporary_images;
     public $images=[];
     public $image;
@@ -43,13 +43,17 @@ public $review;
     }
 
     public function mount($review = null)
-    {
+    {   
+        
         // dd($review->Categories);
         $this->review = $review;
         $this->title = $review->title;
         $this->author =$review->author;
         $this->body = $review->body;
-        $this->selectedCategories=$review->Categories->pluck('id')->toArray();;
+        $this->selectedCategories=$review->Categories->pluck('id')->toArray();
+        $this->temporary_images=$review;
+        
+        //dd($this->temporary_images);
         // dd( $this->selectedCategories[0]->id);
     }
  
