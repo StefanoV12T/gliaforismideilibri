@@ -14,7 +14,10 @@
   </head>
   <body>
     <x-navbar/>
-    {{$slot}}  
+    <div main-content>
+      {{$slot}}
+    </div>
+      
 
     {{-- coockie personalizzati --}}
     {{-- @include('cookie-consent::index')   --}}
