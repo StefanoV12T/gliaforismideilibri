@@ -1,4 +1,4 @@
-<div class="container-fluid py-4 bg-dark text-light mb-0 mt-5">
+<div class="container-fluid py-4 bg-dark text-light">
     <div class="row">
         {{-- se l'utente non è loggato --}}
         @guest
@@ -25,7 +25,7 @@
         <div class="col-12 text-center">
             <p>Grazie per essere un recensore</p>
             <p>Vuoi diventare un revisore? Questo ti permetterà di revisionare e accettare le recensioni degli altri utenti</p>
-            <a href="{{route('become.revisor')}}" class="btn btn-warning text-light shadow my-3">Diventa Recensore</a>
+            <a href="{{route('become.revisor')}}" class="btn btn-warning text-light shadow my-3">Diventa Revisore</a>
         </div>         
         
         @elseif(auth()->user()->is_revisor)

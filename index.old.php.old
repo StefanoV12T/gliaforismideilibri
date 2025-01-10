@@ -1,3 +1,0 @@
-<?php
-header("refresh:0; https://www.gliaforismideilibri.it/public/");
-?>
