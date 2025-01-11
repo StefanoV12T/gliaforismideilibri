@@ -14,7 +14,10 @@
         
     },
     "liveServer.settings.port": 5501,
+    "terminal.integrated.suggest.enableExtensionCompletions":true,
     "terminal.integrated.shellIntegration.suggestEnabled": true,
     "terminal.integrated.shellIntegration.history": 1,
-    "terminal.integrated.showSuggestions":1,
+    "terminal.integrated.showSuggestions": 1,
+    "terminal.integrated.suggest.enabled": true,
+    
 }
