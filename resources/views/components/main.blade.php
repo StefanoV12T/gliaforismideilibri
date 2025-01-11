@@ -22,7 +22,7 @@
     {{-- coockie personalizzati --}}
     {{-- @include('cookie-consent::index')   --}}
     <footer class="footer">
-      <x-footer/>
+      <x-footer/> 
       <x-banner-cookies/>
     </footer>
   </body>
